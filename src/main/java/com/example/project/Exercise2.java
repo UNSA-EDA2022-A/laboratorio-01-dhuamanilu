@@ -21,8 +21,22 @@ public class Exercise2 {
 	}
 
 	public Integer getMenorNumeroSaltos(int a []) {
-
-		// TO DO
-		return -1;
+		int dist=0,rpta=0,k=0;
+		while(true) {
+			while(a[k]<=50+dist && k<6) {
+				k++;
+				if(k<6 && a[k]+50<a[k+1]) {
+					return -1;
+				}
+			}
+			k--;
+			rpta++;
+			if(dist+50>=a[6]) {
+				break;
+			}
+			dist=a[k];
+		}
+		
+		return rpta;
 	}
 }
